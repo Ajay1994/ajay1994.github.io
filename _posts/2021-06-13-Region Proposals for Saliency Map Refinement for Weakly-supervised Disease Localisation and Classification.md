@@ -5,7 +5,7 @@ date: 2021-06-13
 ---
 
 #### Paper Summary
-###### Written By: Ajay Jaiswal
+##### Written By: Ajay Jaiswal
 ------------------
 
 **Saliency Map:** Saliency map is an image that shows each pixel's unique quality. The goal of a saliency map is to simplify and/or change the representation of an image into something that is more meaningful and easier to analyze. For example, if a pixel has a high grey level or other unique color quality in a color image, that pixel's quality will show in the saliency map and in an obvious way. Saliency is a kind of image segmentation. 
