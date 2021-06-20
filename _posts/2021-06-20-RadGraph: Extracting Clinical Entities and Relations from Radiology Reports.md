@@ -27,7 +27,7 @@ Automated for labelling or extracting structured information from MIMIC-CXR and 
  * First, the choice of information extraction schema, such as the 14 medical conditions proposed by Irvin et al., limits the amount of information extracted from reports.
  * Second, there is a limited number of datasets with dense report annotations, which are expensive to obtain given the amount of time and expertise required by medical experts to procure such annotations.
 
-### Paper Contribution:
+Paper Contribution:
 
 1. We define a novel information extraction schema for radiology reports, intended to cover most clinically relevant information within the report while allowing for ease and consistency during annotation. 
 1. We release development and test datasets annotated according to our schema by board-certified radiologists.
