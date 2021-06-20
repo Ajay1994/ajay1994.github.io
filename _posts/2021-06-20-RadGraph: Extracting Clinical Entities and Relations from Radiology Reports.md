@@ -28,6 +28,7 @@ Automated for labelling or extracting structured information from MIMIC-CXR and 
  * Second, there is a limited number of datasets with dense report annotations, which are expensive to obtain given the amount of time and expertise required by medical experts to procure such annotations.
 
 ### Paper Contribution:
+
 1. We define a novel information extraction schema for radiology reports, intended to cover most clinically relevant information within the report while allowing for ease and consistency during annotation. 
 1. We release development and test datasets annotated according to our schema by board-certified radiologists.
    1. Our development dataset contains annotations for 500 radiology reports from the MIMIC-CXR dataset, consisting of 14,579 entities and 10,889 relations.
