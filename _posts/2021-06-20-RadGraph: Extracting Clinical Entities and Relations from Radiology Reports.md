@@ -11,6 +11,7 @@ URL: https://openreview.net/pdf?id=pMWtc5NKd7V
 ------------------
 
 Automated systems for labelling or extracting structured information from MIMIC-CXR and CheXpert involves:
+
 **1. Automated Radiology report labellers:**
    * Chexpert: A large chest radiograph dataset with uncertainty labels and expert comparison. CoRR, abs/1901.07031, 2019 
    * Negbio: a high-performance tool for negation and uncertainty detection in radiology reports. AMIA, 2018
