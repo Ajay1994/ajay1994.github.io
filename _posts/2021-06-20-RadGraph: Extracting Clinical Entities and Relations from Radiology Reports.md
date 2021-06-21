@@ -7,8 +7,8 @@ date: 2021-06-20
 
 #### Paper Summary
 ##### Written By: Ajay Jaiswal
-[Paper URL](https://openreview.net/pdf?id=pMWtc5NKd7V)
 ------------------
+[Paper URL](https://openreview.net/pdf?id=pMWtc5NKd7V)
 
 Automated systems for labelling or extracting structured information from MIMIC-CXR and CheXpert involves:
 
