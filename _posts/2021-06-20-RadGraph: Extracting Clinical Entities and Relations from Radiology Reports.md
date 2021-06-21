@@ -58,7 +58,7 @@ We propose a novel information extraction schema for extracting entities and rel
 * *Suggestive Of (Observation, Observation)* is a relation between two Observation entities indicating that the presence of the second Observation is inferred from that of the first Observation.
 * *Located At (Observation, Anatomy)* is a relation between an Observation entity and an Anatomy entity indicating that the Observation is related to the Anatomy. While Located At often refers to location, it can also be used to describe other relations between an Observation and an Anatomy.
 * *Modify (Observation, Observation) or (Anatomy, Anatomy)* is a relation between two Observation entities or two Anatomy entities indicating that the first entity modifies the scope of, or quantifies the degree of, the second entity.
-* [Identified Issue]: As a result, all Observation modifiers are annotated as Observation entities, and all Anatomy modifiers are annotated as Anatomy entities for simplicity.
+* **Identified Issue**: As a result, all Observation modifiers are annotated as Observation entities, and all Anatomy modifiers are annotated as Anatomy entities for simplicity.
 
 ### Dataset Statistics and Details:
 
@@ -67,3 +67,14 @@ We propose a novel information extraction schema for extracting entities and rel
 **Development dataset:** We sample 500 radiology reports from the MIMIC-CXR dataset [1] for our development dataset. Our development dataset was divided into train and dev sets, where the dev set includes 15% of the development dataset. Patients associated with reports in the train set and dev set do not overlap.
 
 **Test dataset:** We sample 50 radiology reports from the MIMIC-CXR dataset and 50 radiology reports from the CheXpert dataset for our test dataset in order to test generalization of approaches across institutions. We de-identify CheXpert reports using an automated, transformer-based de-identification algorithm followed by manual review of each report. 
+
+### Benchmark Approaches abd Results:
+
+**Approach:** We proposed an entity and relation extraction task for radiology reports that can be developed using our development dataset and tested using our test dataset.  For each report, we provide annotations identifying the type and span of each entity as well as relations between entities.
+
+**Baseline Model:** Our Baseline approach to entity and relation extraction uses a BERT model with a linear classification head on top of the last layer for NER and R-BERT for relation extraction. For our baseline NER approach, since the same entity may span multiple tokens, we use the IOB tagging scheme and convert IOB tags to entity types defined by our schema after inference. For each of our approaches, in addition to using BERT weight initial220 izations, we use weight initializations from four different biomedical pretrained models, which are BioBERT [33], Bio+ClinicalBERT [34], PubMedBERT [35], and BlueBERT [36].
+
+**Benchmark models:** We develop additional benchmark approaches for our task, using two different entity and relation extraction model architectures. We use BERT in both our PURE and DYGIE++ approaches.
+
+* Our first approach uses the DYGIE++ framework by Wadden et al. [25], which achieved state-of-the-art at the time on NER and relation extraction by jointly extracting entities and relations. 
+* Our second approach uses the Princeton University Relation Extraction system (PURE) by Zhong et al. [32], which achieved state-of-the-art at the time on relation extraction using a pipeline approach that decomposes NER and relation extraction into separate subtasks.
