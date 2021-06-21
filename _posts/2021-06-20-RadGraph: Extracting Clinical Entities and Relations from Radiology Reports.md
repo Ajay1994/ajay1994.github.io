@@ -46,4 +46,8 @@ We propose a novel information extraction schema for extracting entities and rel
 
 ![image](https://user-images.githubusercontent.com/6660499/122692500-083acd80-d1fb-11eb-9bd2-1d767a879ca9.png)
 
-
+**Entities: ** 
+* An entity as a continuous span of text that can include one or more adjacent words.
+* Entities in our schema center around two concepts: *Anatomy and Observation*. We specify three uncertainty levels for Observation, so our schema defines four entities: Anatomy, Observation: Definitely Present, Observation: Uncertain, and Observation: Definitely Absent. 
+* Anatomy refers to an anatomical body part that occurs in a radiology report, such as a “lung”. 
+* Observations refer to words associated with visual features, identifiable pathophysiologic processes, or diagnostic disease classifications. For example, an Observation could be “effusion” or more general phrases like “increased”.
