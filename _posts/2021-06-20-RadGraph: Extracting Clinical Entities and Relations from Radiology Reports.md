@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "RadGraph: Extracting Clinical Entities and Relations from Radiology Reports"
+URL: https://openreview.net/pdf?id=pMWtc5NKd7V
 date: 2021-06-20
 ---
 
@@ -42,12 +43,27 @@ Automated for labelling or extracting structured information from MIMIC-CXR and 
 
 ### Information Extraction schema
 
-We propose a novel information extraction schema for extracting entities and relations from radiology reports, adapting the schema initially proposed by Langlotz et al. to incorporate relations between entities and reduce the number of entities. Our schema is designed for high coverage of the clinically relevant information in a report corresponding to the radiology image being examined, generally included in the Findings and Impression sections of the radiology report.
+We propose a novel information extraction schema for extracting entities and relations from radiology reports, adapting the schema initially proposed by Langlotz et al. *to incorporate relations between entities and reduce the number of entities*. Our schema is designed for high coverage of the clinically relevant information in a report corresponding to the radiology image being examined, generally included in the Findings and Impression sections of the radiology report.
 
 ![image](https://user-images.githubusercontent.com/6660499/122692500-083acd80-d1fb-11eb-9bd2-1d767a879ca9.png)
 
-**Entities: ** 
+**Entities:** 
 * An entity as a continuous span of text that can include one or more adjacent words.
 * Entities in our schema center around two concepts: *Anatomy and Observation*. We specify three uncertainty levels for Observation, so our schema defines four entities: Anatomy, Observation: Definitely Present, Observation: Uncertain, and Observation: Definitely Absent. 
 * Anatomy refers to an anatomical body part that occurs in a radiology report, such as a “lung”. 
 * Observations refer to words associated with visual features, identifiable pathophysiologic processes, or diagnostic disease classifications. For example, an Observation could be “effusion” or more general phrases like “increased”.
+
+**Relations**
+* We define a relation as a directed edge between two entities. Our schema uses three relations: *Suggestive Of, Located At, and Modify*.
+* *Suggestive Of (Observation, Observation)* is a relation between two Observation entities indicating that the presence of the second Observation is inferred from that of the first Observation.
+* *Located At (Observation, Anatomy)* is a relation between an Observation entity and an Anatomy entity indicating that the Observation is related to the Anatomy. While Located At often refers to location, it can also be used to describe other relations between an Observation and an Anatomy.
+* *Modify (Observation, Observation) or (Anatomy, Anatomy)* is a relation between two Observation entities or two Anatomy entities indicating that the first entity modifies the scope of, or quantifies the degree of, the second entity.
+* [Identified Issue]: As a result, all Observation modifiers are annotated as Observation entities, and all Anatomy modifiers are annotated as Anatomy entities for simplicity.
+
+### Dataset Statistics and Details:
+
+![image](https://user-images.githubusercontent.com/6660499/122692957-5cdf4800-d1fd-11eb-812d-2d997b8ba633.png)
+
+**Development dataset:** We sample 500 radiology reports from the MIMIC-CXR dataset [1] for our development dataset. Our development dataset was divided into train and dev sets, where the dev set includes 15% of the development dataset. Patients associated with reports in the train set and dev set do not overlap.
+
+**Test dataset:** We sample 50 radiology reports from the MIMIC-CXR dataset and 50 radiology reports from the CheXpert dataset for our test dataset in order to test generalization of approaches across institutions. We de-identify CheXpert reports using an automated, transformer-based de-identification algorithm followed by manual review of each report. 
