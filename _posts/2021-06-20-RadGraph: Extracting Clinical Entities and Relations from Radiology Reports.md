@@ -87,7 +87,8 @@ We propose a novel information extraction schema for extracting entities and rel
 
 ![image](https://user-images.githubusercontent.com/6660499/122693363-25719b00-d1ff-11eb-97da-d89dcea1ec13.png)
 
-![image](https://user-images.githubusercontent.com/6660499/122693372-31f5f380-d1ff-11eb-8ca5-ec331b4d191f.png)
+![image](https://user-images.githubusercontent.com/6660499/122693576-09222e00-d200-11eb-8ed5-99d80d092f77.png)
+
 
 ### Analysis:
 
