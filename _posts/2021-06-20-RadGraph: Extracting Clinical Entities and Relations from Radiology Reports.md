@@ -72,9 +72,32 @@ We propose a novel information extraction schema for extracting entities and rel
 
 **Approach:** We proposed an entity and relation extraction task for radiology reports that can be developed using our development dataset and tested using our test dataset.  For each report, we provide annotations identifying the type and span of each entity as well as relations between entities.
 
-**Baseline Model:** Our Baseline approach to entity and relation extraction uses a BERT model with a linear classification head on top of the last layer for NER and R-BERT for relation extraction. For our baseline NER approach, since the same entity may span multiple tokens, we use the IOB tagging scheme and convert IOB tags to entity types defined by our schema after inference. For each of our approaches, in addition to using BERT weight initial220 izations, we use weight initializations from four different biomedical pretrained models, which are BioBERT [33], Bio+ClinicalBERT [34], PubMedBERT [35], and BlueBERT [36].
+**Baseline Model:** Our Baseline approach to entity and relation extraction uses a BERT model with a linear classification head on top of the last layer for NER and R-BERT for relation extraction. For our baseline NER approach, since the same entity may span multiple tokens, we use the IOB tagging scheme and convert IOB tags to entity types defined by our schema after inference. For each of our approaches, in addition to using BERT weight initial220 izations, we use weight initializations from four different biomedical pretrained models, which are BioBERT , Bio+ClinicalBERT, PubMedBERT, and BlueBERT.
 
 **Benchmark models:** We develop additional benchmark approaches for our task, using two different entity and relation extraction model architectures. We use BERT in both our PURE and DYGIE++ approaches.
 
-* Our first approach uses the DYGIE++ framework by Wadden et al. [25], which achieved state-of-the-art at the time on NER and relation extraction by jointly extracting entities and relations. 
-* Our second approach uses the Princeton University Relation Extraction system (PURE) by Zhong et al. [32], which achieved state-of-the-art at the time on relation extraction using a pipeline approach that decomposes NER and relation extraction into separate subtasks.
+* Our first approach uses the DYGIE++ framework by Wadden et al., which achieved state-of-the-art at the time on NER and relation extraction by jointly extracting entities and relations. 
+* Our second approach uses the Princeton University Relation Extraction system (PURE) by Zhong et al., which achieved state-of-the-art at the time on relation extraction using a pipeline approach that decomposes NER and relation extraction into separate subtasks.
+
+**Evaluation Metrics** We report both micro and macro F1 for entity recognition and relation extraction. 
+* For entity recognition, a predicted entity is considered correct if the predicted span boundaries and predicted entity type are both correct. 
+* For relation extraction, a predicted relation is considered correct if the predicted entity pair is correct (both the span boundaries and entity type) and the relation type is correct.
+
+### Results:
+
+![image](https://user-images.githubusercontent.com/6660499/122693363-25719b00-d1ff-11eb-97da-d89dcea1ec13.png)
+
+![image](https://user-images.githubusercontent.com/6660499/122693372-31f5f380-d1ff-11eb-8ca5-ec331b4d191f.png)
+
+### Analysis:
+
+**Schema Coverage**
+Given that existing information extraction systems for radiology reports often suffer from a lack of report coverage, we measure the number of tokens and sentences in report sections covered by our schema. To calculate coverage, we extract the Findings and Impression sections of the reports, which our schema is designed to annotate. We then calculate the average percent of sentences and tokens annotated per report across the development and test datasets.
+
+![image](https://user-images.githubusercontent.com/6660499/122693442-826d5100-d1ff-11eb-8d1b-c1efa1d7b64b.png)
+
+**Annotation Disagreements**
+To measure agreement between radiologists using our schema, we calculate Cohen’s Kappa [37] between the two annotators on each test set for the named entity recognition task and the relation extraction task separately. For named entity recognition, we compute Kappa scores of 0.974 and 0.829 on the MIMIC-CXR and CheXpert test sets respectively. For relation extraction, we compute Kappa scores of 0.841 and 0.397 on the MIMIC-CXR and CheXpert test sets respectively.
+*One reason for greater disagreement on the CheXpert test set compared to the MIMIC-CXR test set may relate to different percentages of patients in the intensive care unit (ICU) within the MIMIC-CXR dataset and the CheXpert dataset, which can systematically affect the contents of radiology reports.
+
+
