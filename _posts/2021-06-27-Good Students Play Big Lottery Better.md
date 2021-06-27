@@ -23,6 +23,9 @@ Such sparse sub-network that can match the test accuracy of the original dense n
 
 **Weight rewinding** proposed (Frankle et. al. 2019) “roll back" the dense model weights to some early training iteration (but not the very beginning), and to use the rewound weight as the re-training initialization. That was found to help find lottery tickets in large networks and/or at extremely high pruning ratios. A simplified version which is called **learning rate rewinding**, i.e., rolling back the learning rate schedule rather than the weight status, for the retraining to start with. Those efforts suggest the promise of “recycling" useful knowledge from the original training for finding large-scale lottery tickets.
 
+![image](https://user-images.githubusercontent.com/6660499/123561532-80ab0c80-d76e-11eb-8f40-3a221e4a66d6.png)
+
+
 ### Paper Contribution
 
 The paper explores the question : *will the late training phase of the dense model provide helpful side information for large-scale ticket finding too?*
