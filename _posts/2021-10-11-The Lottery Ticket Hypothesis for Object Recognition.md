@@ -5,7 +5,7 @@ date: 2021-10-11
 ---
 
 #### Paper Link : https://arxiv.org/abs/2012.04643
-#### Download Notes : <a href="../../../reading/LTH_object_detection.pdf" class="download" title="View Notes">Download Notes</a>
+#### Download Notes : <a href="../../reading/LTH_object_detection.pdf" class="download" title="View Notes">Download Notes</a>
 ##### Annotated By: Ajay Jaiswal
 ------------------
 
