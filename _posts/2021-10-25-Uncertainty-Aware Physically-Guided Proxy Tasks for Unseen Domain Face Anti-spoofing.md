@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Uncertainty-Aware Physically-Guided Proxy Tasks for Unseen Domain Face Anti-spoofing"
-date: 2021-10-11
+date: 2021-10-25
 ---
 
 #### Paper Link : https://arxiv.org/pdf/2011.14054.pdf
