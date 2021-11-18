@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Single-Side Domain Generalization for Face Anti-Spoofing"
-date: 2021-10-11
+date: 2021-11-05
 ---
 
 #### Paper Link : https://arxiv.org/pdf/2004.14043.pdf
