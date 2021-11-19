@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Multi-adversarial Discriminative Deep Domain Generalization for Face Presentation Attack Detection"
-date: 2021-10-17
+date: 2021-11-17
 ---
 
 #### Paper Link : https://ieeexplore.ieee.org/document/8953226
