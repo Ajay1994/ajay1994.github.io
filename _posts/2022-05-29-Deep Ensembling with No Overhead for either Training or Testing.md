@@ -5,7 +5,7 @@ date: 2022-05-29
 ---
 
 #### Paper Link : https://openreview.net/forum?id=RLtqs6pzj1-
-#### Download Notes : <a href="../../../../reading/_Deep Ensembling with No Overhead for either Training or Testing.pdf" class="download" title="View Notes">Download Notes</a>
+#### Download Notes : <a href="../../../../reading/Deep Ensembling with No Overhead for either Training or Testing.pdf" class="download" title="View Notes">Download Notes</a>
 ##### Annotated By: Ajay Jaiswal
 ------------------
 
