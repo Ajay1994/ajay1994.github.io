@@ -9,4 +9,5 @@ date: 2022-05-29
 ##### Annotated By: Ajay Jaiswal
 ------------------
 
-![image](https://user-images.githubusercontent.com/6660499/170859073-7d311a37-f4a2-4917-ad05-5bb37e6a8f49.png)
+<img width="838" alt="image" src="https://user-images.githubusercontent.com/6660499/170859151-f6a4e14f-38b8-428d-a803-6c83ffc63d74.png">
+
