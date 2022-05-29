@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[ICLR 2022] Deep Ensembling with No Overhead for either Training or Testing: The All-Round Blessings of Dynamic Sparsity"
+title: "[ICLR 2022] Deep Ensembling with No Overhead for either Training or Testing: The All-Round Blessings of DST"
 date: 2022-05-29
 ---
 
